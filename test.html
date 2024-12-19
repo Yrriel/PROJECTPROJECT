@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=v, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="printhere"></h1>
+    
+</body>
+<script>
+     window.onload = function () {
+        console.log("Script is running!");
+        edituserDB();
+        };
+    async function edituserDB(){
+    const printhere = document.getElementById('printhere');
+
+const updateResponse = await fetch('insert_accessLogs.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `index=2&ESP32SerialNumber=SN-DA101A0F`
+    });
+    console.log("asdasdd");
+    const updateData = await updateResponse.json();
+    console.log('Update Data:', updateData);  // Log the response data
+
+}
+</script>
+
+</html>
